@@ -2,7 +2,12 @@
 
 // A callback function to handle the click
 function copyItemId(info, tab) {
-  copyTextToClipboard(getUrlParam('id',info.linkUrl));
+  if (info.linkUrl.includes('webmap=')){
+    copyTextToClipboard(getUrlParam('webmap',info.linkUrl));
+  }
+  else{
+    copyTextToClipboard(getUrlParam('id',info.linkUrl));
+  }
 }
 
 // extract a parameter from a url
@@ -15,8 +20,8 @@ function getUrlParam( name, url ) {
     return results == null ? null : results[1];
 }
 
-// copies some text to the clipboard
-// https://stackoverflow.com/a/18455088
+// copies some text to the clipboard by creating a DOM element, 
+// copying the text in it, then removing the element
 function copyTextToClipboard(text) {
   var copyFrom = document.createElement("textarea");
   copyFrom.textContent = text;
@@ -27,13 +32,13 @@ function copyTextToClipboard(text) {
   body.removeChild(copyFrom);
 }
 
-// Create the context menu
+// Create the context menu, allow item-details page and webmap viewer links
 var contextMenu = chrome.contextMenus.create({
-    "title": "Copy item-id",
+    "title": "Copy item-id to clipboard",
     "contexts":["link"],
     "onclick": copyItemId,
     "targetUrlPatterns": [
-        "http://*.arcgis.com/home/item.html?id=*",
-        "https://*.arcgis.com/home/item.html?id=*"
+        "*://*.arcgis.com/home/item.html?id=*",
+        "*://*.arcgis.com/home/webmap/viewer.html?webmap=*",
     ]
 });

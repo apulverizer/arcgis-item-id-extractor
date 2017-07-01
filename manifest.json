@@ -6,5 +6,8 @@
   "background": {
     "scripts": ["arcgis_item_id_extractor.js"]
   },
+  "icons": {
+    "16": "clippy.png"
+  },
   "manifest_version": 2
 }
