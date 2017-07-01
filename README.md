@@ -1,5 +1,5 @@
 # arcgis-item-id-extractor
-A simple Chrome extension to copy the item-id of an item on arcgis online to the clipboard
+A simple Chrome extension to copy the item-id of an item on ArcGIS Online to the clipboard
 
 ![Example Usage](example.png)
 
