@@ -7,7 +7,9 @@
     "scripts": ["arcgis_item_id_extractor.js"]
   },
   "icons": {
-    "16": "clippy.png"
+    "16": "clippy-16.png",
+    "48": "clippy-48.png",
+    "128": "clippy-128.png"
   },
   "manifest_version": 2
 }
