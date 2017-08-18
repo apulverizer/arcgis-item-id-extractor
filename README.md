@@ -1,7 +1,7 @@
 # arcgis-item-id-extractor
 A simple Chrome extension to copy the item-id of an item on ArcGIS Online to the clipboard. Right click on any link that matches the patterns listed below and click `Copy item-id to clipboard` to extract the item id and copy it to the clipboard:
 
-Availabe [here](https://chrome.google.com/webstore/detail/arcgis-item-id-extractor/mlelopenabdjdleeijfiakmddpponpol) on the Chrome Web Store
+Available [here](https://chrome.google.com/webstore/detail/arcgis-item-id-extractor/mlelopenabdjdleeijfiakmddpponpol) on the Chrome Web Store
 
 ![Example Usage](example.png)
 
