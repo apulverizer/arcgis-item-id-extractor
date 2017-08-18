@@ -14,7 +14,7 @@ Available [here](https://chrome.google.com/webstore/detail/arcgis-item-id-extrac
 1. Clone/fork this repository
 2. [Enable developer extensions in Chrome](https://developer.chrome.com/extensions/faq#faq-dev-01)
 3. Click load an unpacked extension and select the folder containing the code
-4. The extension should now be loaded## Issues
+4. The extension should now be loaded
 
 ## Issues & Contributing
 
