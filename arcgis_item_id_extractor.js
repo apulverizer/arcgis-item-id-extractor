@@ -5,8 +5,20 @@ function copyItemId(info, tab) {
   if (info.linkUrl.includes('webmap=')){
     copyTextToClipboard(getUrlParam('webmap',info.linkUrl));
   }
+  else if (info.linkUrl.includes('opsdashboard')){
+    copyTextToClipboard(getDashboardId(info.linkUrl));
+  }
   else{
     copyTextToClipboard(getUrlParam('id',info.linkUrl));
+  }
+}
+
+function getDashboardId(url){
+  if (url.includes('/new')){
+    return getUrlParam('id',url);
+  }
+  else{
+    return url.split("#")[1].split("/")[1].split("?")[0];
   }
 }
 
@@ -20,7 +32,7 @@ function getUrlParam( name, url ) {
     return results == null ? null : results[1];
 }
 
-// copies some text to the clipboard by creating a DOM element, 
+// copies some text to the clipboard by creating a DOM element,
 // copying the text in it, then removing the element
 function copyTextToClipboard(text) {
   var copyFrom = document.createElement("textarea");
@@ -40,5 +52,6 @@ var contextMenu = chrome.contextMenus.create({
     "targetUrlPatterns": [
         "*://*.arcgis.com/home/item.html?id=*",
         "*://*.arcgis.com/home/webmap/viewer.html?webmap=*",
+        "*://*.arcgis.com/apps/opsdashboard/index.html*"
     ]
 });
